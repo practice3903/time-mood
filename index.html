@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fade-in">
+  <div class="container">
+    <div class="card">
+      <h2>How are you feeling right now?</h2>
+      <div class="mood-emojis">
+        <span class="mood-emoji" data-mood="happy" onclick="selectMood('happy')">😄</span>
+        <span class="mood-emoji" data-mood="neutral" onclick="selectMood('neutral')">😐</span>
+        <span class="mood-emoji" data-mood="sad" onclick="selectMood('sad')">😔</span>
+        <span class="mood-emoji" data-mood="angry" onclick="selectMood('angry')">😡</span>
+        <span class="mood-emoji" data-mood="tired" onclick="selectMood('tired')">😴</span>
+      </div>
+
+      <label for="intensity">Intensity: <span id="intensity-value">Medium</span></label>
+      <input type="range" id="intensity" class="intensity-slider" min="1" max="5" value="3" oninput="updateIntensity()">
+
+      <input type="text" id="mood-text" placeholder="Describe your mood in one word (optional)">
+    <div class="button-group">
+      <button class="primary-btn" onclick="submitMood()">Submit Mood</button>
+      <button class="secondary-btn"><a href="dashboard.html" class="button-link">View Dashboard</a></button>
+    </div>
+      <div id="affirmation" class="affirmation">Got it. Remember — every emotion matters 💙</div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
